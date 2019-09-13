@@ -6,6 +6,8 @@ spec:
   ttlSecondsAfterFinished: 120
   template:
     spec:
+      serviceAccountName: daskkubernetes
+      automountServiceAccountToken: true
       containers:
       - name: dask-rhat2-driver
         image: quay.io/csams/rhat2

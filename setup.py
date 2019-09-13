@@ -5,6 +5,7 @@ runtime = set([
     "insights-core",
     "dask[bag,dataframe]",
     "distributed",
+    "dask-kubernetes",
     "sklearn",
     "pandas",
 ])

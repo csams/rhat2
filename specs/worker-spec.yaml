@@ -3,6 +3,9 @@ metadata:
   labels:
     app: insights-warehouse
 spec:
+  securityContext:
+    runAsUser: 0
+    runAsGroup: 0
   restartPolicy: Never
   containers:
   - image: daskdev/dask:latest

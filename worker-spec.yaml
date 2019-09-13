@@ -7,7 +7,7 @@ spec:
   containers:
   - image: daskdev/dask:latest
     imagePullPolicy: IfNotPresent
-    args: [dask-worker, --nthreads, '1', --no-bokeh, --memory-limit, 1GB, --death-timeout, '60']
+    args: [dask-worker, --nthreads, '1', --no-bokeh, --memory-limit, 1GB, --death-timeout, '60', --local-directory, '/tmp']
     name: dask
     env:
       - name: EXTRA_PIP_PACKAGES

@@ -7,8 +7,8 @@ from dask_kubernetes import KubeCluster
 
 logging.basicConfig(level=logging.DEBUG)
 
-with KubeCluster.from_yaml('/usr/src/app/worker-spec.yaml') as cluster:
-    cluster.adapt()
+with KubeCluster.from_yaml('/usr/src/app/specs/worker-spec.yaml') as cluster:
+    cluster.scale(4)
     # Connect dask to the cluster
     client = distributed.Client(cluster)
 

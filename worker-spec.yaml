@@ -1,0 +1,14 @@
+kind: Pod
+metadata:
+  labels:
+    app: insights-warehouse
+spec:
+  restartPolicy: Never
+  containers:
+  - image: daskdev/dask:latest
+    imagePullPolicy: IfNotPresent
+    args: [dask-worker, --nthreads, '1', --no-bokeh, --memory-limit, 1GB, --death-timeout, '60']
+    name: dask
+    env:
+      - name: EXTRA_PIP_PACKAGES
+        value: insights-core

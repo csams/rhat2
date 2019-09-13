@@ -5,7 +5,7 @@ import dask.array as da
 from dask_kubernetes import KubeCluster
 
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 with KubeCluster.from_yaml('/usr/src/app/specs/worker-spec.yaml') as cluster:
     cluster.scale(4)
